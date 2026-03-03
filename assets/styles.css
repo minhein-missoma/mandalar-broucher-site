@@ -580,6 +580,7 @@ form .actions {
   backdrop-filter: blur(2px);
   z-index: 49;
   /* nav is 50 */
+  height: 100vh;
 }
 
 /* Drawer behaviour (mobile only) */
