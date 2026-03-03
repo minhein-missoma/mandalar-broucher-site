@@ -17,7 +17,16 @@
           <span class="logo" aria-hidden="true"></span>
           <span>Mandalar</span>
         </a>
-        <div class="nav-links">
+
+        <!-- Mobile toggle -->
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-menu"
+          aria-expanded="false">
+          <span class="sr-only">Menu</span>
+          <span class="burger" aria-hidden="true"></span>
+        </button>
+
+        <!-- Drawer / menu -->
+        <div id="primary-menu" class="nav-links" data-drawer>
           <a href="/#features">Features</a>
           <a href="/pricing.html">Pricing</a>
           <a href="/docs.html">Docs</a>
@@ -27,6 +36,9 @@
         </div>
       </div>
     </div>
+
+    <!-- Backdrop for mobile drawer -->
+    <div class="nav-backdrop" data-backdrop hidden></div>
   </nav>
 
   
@@ -40,7 +52,6 @@
     </div>
   </div>
 </main>
-
 
   <hr class="sep" />
   <footer class="footer">
