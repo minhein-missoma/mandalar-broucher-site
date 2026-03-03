@@ -236,6 +236,7 @@ h1 {
 @media (max-width: 920px) {
   .code {
     white-space: normal;
+    word-break: break-all;
   }
 }
 
