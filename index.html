@@ -322,7 +322,44 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="/assets/main.js" defer></script>
 
-  
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const drawer = document.querySelector('[data-drawer]');
+      const toggle = document.querySelector('.nav-toggle');
+
+      if (!drawer || !toggle) return;
+
+      function closeNav() {
+        root.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      }
+
+      function isOpen() {
+        return root.classList.contains('nav-open');
+      }
+
+      // Click anywhere on document
+      document.addEventListener('click', function (e) {
+        if (!isOpen()) return;
+
+        const clickInsideDrawer = drawer.contains(e.target);
+        const clickOnToggle = toggle.contains(e.target);
+
+        if (!clickInsideDrawer && !clickOnToggle) {
+          closeNav();
+        }
+      });
+
+      // Optional: ESC key support
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && isOpen()) {
+          closeNav();
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
