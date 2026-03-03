@@ -46,6 +46,12 @@ a {
   padding: 0 20px
 }
 
+@media (max-width: 920px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
 nav {
   position: sticky;
   top: 0;
