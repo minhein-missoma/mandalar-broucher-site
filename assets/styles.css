@@ -467,6 +467,10 @@ form .actions {
   margin-top: 14px
 }
 
+.actions {
+  margin-top: 14px
+}
+
 .toast {
   position: fixed;
   right: 16px;
