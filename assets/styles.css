@@ -235,7 +235,7 @@ h1 {
 
 @media (max-width: 920px) {
   .code {
-    white-space: unset;
+    white-space: normal;
   }
 }
 
