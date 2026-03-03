@@ -233,6 +233,12 @@ h1 {
   white-space: pre;
 }
 
+@media (max-width: 920px) {
+  .code {
+    white-space: unset;
+  }
+}
+
 .section {
   padding: 44px 0
 }
@@ -624,45 +630,93 @@ form .actions {
     overflow: hidden;
   }
 }
+
 /* --- Extra mobile hardening (small screens, iOS) --- */
-html{
+html {
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 84px; /* keep anchors visible under sticky nav */
+  scroll-padding-top: 84px;
+  /* keep anchors visible under sticky nav */
 }
-body{overflow-x:hidden}
-img, svg, video, canvas{max-width:100%; height:auto}
+
+body {
+  overflow-x: hidden
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto
+}
 
 /* Avoid iOS zoom on form fields */
-input, textarea, select, button{font-size:16px}
-
-@media (max-width: 520px){
-  .container{padding: 0 16px}
-  .hero{padding: 54px 0 28px}
-  .section{padding: 34px 0}
-  .footer{padding: 22px 0 34px}
-
-  .nav-inner{padding: 12px 0}
-  .page h1{font-size: clamp(26px, 6.5vw, 34px)}
-  .price{font-size: 32px}
-
-  /* make primary CTAs easier to tap on narrow devices */
-  .cta .btn{flex: 1 1 220px}
+input,
+textarea,
+select,
+button {
+  font-size: 16px
 }
 
-@media (max-width: 360px){
-  .container{padding: 0 14px}
-  .btn{padding: 10px 12px}
-  .nav-toggle{width:42px;height:42px}
+@media (max-width: 520px) {
+  .container {
+    padding: 0 16px
+  }
+
+  .hero {
+    padding: 54px 0 28px
+  }
+
+  .section {
+    padding: 34px 0
+  }
+
+  .footer {
+    padding: 22px 0 34px
+  }
+
+  .nav-inner {
+    padding: 12px 0
+  }
+
+  .page h1 {
+    font-size: clamp(26px, 6.5vw, 34px)
+  }
+
+  .price {
+    font-size: 32px
+  }
+
+  /* make primary CTAs easier to tap on narrow devices */
+  .cta .btn {
+    flex: 1 1 220px
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 14px
+  }
+
+  .btn {
+    padding: 10px 12px
+  }
+
+  .nav-toggle {
+    width: 42px;
+    height: 42px
+  }
 }
 
 /* Safe-area support for notched devices */
-@supports (padding: max(0px)){
-  @media (max-width: 920px){
-    .container{
+@supports (padding: max(0px)) {
+  @media (max-width: 920px) {
+    .container {
       padding-left: max(16px, env(safe-area-inset-left));
       padding-right: max(16px, env(safe-area-inset-right));
     }
-    .nav-links{
+
+    .nav-links {
       padding-top: calc(72px + env(safe-area-inset-top));
       padding-bottom: calc(18px + env(safe-area-inset-bottom));
     }
