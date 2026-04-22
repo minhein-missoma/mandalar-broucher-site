@@ -831,6 +831,11 @@ button {
   .apps-grid { grid-template-columns: 1fr; }
 }
 
+.hero-grid-single {
+  grid-template-columns: 1fr;
+  max-width: 680px;
+}
+
 /* Safe-area support for notched devices */
 @supports (padding: max(0px)) {
   @media (max-width: 920px) {
