@@ -715,6 +715,122 @@ button {
   }
 }
 
+/* --- App showcase grid --- */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.app-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.app-card:not(.app-card-disabled):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 70px rgba(0,0,0,.55);
+}
+
+.app-card-disabled {
+  opacity: 0.55;
+}
+
+.app-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+}
+
+.app-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.badge-live   { background: rgba(56,217,150,.12); color: #38d996; border: 1px solid rgba(56,217,150,.3); }
+.badge-soon   { background: rgba(255,204,102,.10); color: #ffcc66; border: 1px solid rgba(255,204,102,.3); }
+.badge-planned{ background: rgba(77,214,255,.10);  color: #4dd6ff; border: 1px solid rgba(77,214,255,.3); }
+
+.app-card-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+.app-card-tagline {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.app-card-features {
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+.app-card-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.app-card-features li::before {
+  content: '✓';
+  color: var(--ok);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.app-card-disabled .app-card-features li::before {
+  color: var(--muted);
+}
+
+.app-card-price {
+  font-size: 13px;
+  color: var(--muted2);
+}
+
+.app-card-price strong {
+  color: var(--text);
+}
+
+@media (max-width: 920px) {
+  .apps-grid { grid-template-columns: 1fr; }
+}
+
 /* Safe-area support for notched devices */
 @supports (padding: max(0px)) {
   @media (max-width: 920px) {
