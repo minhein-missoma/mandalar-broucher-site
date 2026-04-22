@@ -9,7 +9,7 @@ Static brochure site for **mandalar.app** (marketing pages only).
 - Build command: *(none)*
 - Output: *(static)*
 
-## Configure domains
+## Configure domains 
 - Point `mandalar.app` to this Vercel project
 - Point `app.mandalar.app` to your Shopify app (separate Vercel project / hosting)
 
